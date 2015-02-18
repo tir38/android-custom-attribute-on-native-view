@@ -26,3 +26,4 @@ Thanks to this SO question: https://stackoverflow.com/questions/14800642/custom-
 
 TODO:
 - can we apply same principals to layouts inflated in Activity?
+- Look at how Calligraphy does this: https://github.com/chrisjenx/Calligraphy
