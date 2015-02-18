@@ -12,8 +12,6 @@ public class MyFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        View view = inflater.inflate(R.layout.fragment_main, null);
-
         // new way
         AttributeParser attributeParser = new AttributeParser();
         LayoutInflater layoutInflater = attributeParser.getLayoutInflater(inflater);
