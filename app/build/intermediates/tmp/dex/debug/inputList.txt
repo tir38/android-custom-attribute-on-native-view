@@ -1,0 +1,5 @@
+/Users/jason/temp/CustomAttrib/app/build/intermediates/classes/debug
+/Users/jason/temp/CustomAttrib/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-6e0e24a2b601397e35f3699f3fb61ce9a4db1b1e.jar
+/Users/jason/temp/CustomAttrib/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-9bc365769db1332cbe8be052b119a4db90a1cd1a.jar
+/Users/jason/temp/CustomAttrib/app/build/intermediates/pre-dexed/debug/classes-7c464350122c0d24578eedf0b3e0e0b4c5c05b64.jar
+/Users/jason/temp/CustomAttrib/app/build/intermediates/pre-dexed/debug/classes-a78603e666b227a430b9551e26464ca51750fe83.jar
