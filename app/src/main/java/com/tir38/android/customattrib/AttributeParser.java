@@ -17,12 +17,12 @@ public class AttributeParser {
      * *
      */
     private SparseArray<SparseArray<String>> mAllAttributesForAllViews;
-    private TheMagic mTheMagic;
+    private MagicMan mMagicMan;
 
-    public AttributeParser() {
+    public AttributeParser(Context context) {
         mAllAttributesForAllViews = new SparseArray<>();
         mFactory = new AttributeParserFactory();
-        mTheMagic = new TheMagic();
+        mMagicMan = new MagicMan(context);
     }
 
     public void clear() {
@@ -86,10 +86,10 @@ public class AttributeParser {
 
                         if (attributeId != 0) { // valid attribute id
                             String attributeValue = attributes.valueAt(j);
-                            Boolean customAttribute = Boolean.valueOf(attributeValue);
+                            Boolean shouldDoMagic = Boolean.valueOf(attributeValue);
+                            mMagicMan.doTheMagic(view, shouldDoMagic);
 
-                            mTheMagic.doTheMagic(view, customAttribute);
-                            view.setTag(attributeValue);
+                            view.setTag(attributeValue); // even though we just applied the magic, set the tag so we can check state of the magic later
                         }
                     }
                 }
@@ -97,14 +97,6 @@ public class AttributeParser {
 
         }
     }
-
-//    public Map<Integer, HashMap<Integer, String>> getAllAttributesForAllViews() {
-//        return mAllAttributesForAllViews;
-//    }
-//
-//    public void setAllAttributesForAllViews(Map<Integer, HashMap<Integer, String>> allAttributesForAllViews) {
-//        this.mAllAttributesForAllViews = allAttributesForAllViews;
-//    }
 
     private class AttributeParserFactory implements LayoutInflater.Factory {
 

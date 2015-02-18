@@ -13,7 +13,7 @@ public class MyFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // new way
-        AttributeParser attributeParser = new AttributeParser();
+        AttributeParser attributeParser = new AttributeParser(getActivity());
         LayoutInflater layoutInflater = attributeParser.getLayoutInflater(inflater);
         View view = layoutInflater.inflate(R.layout.fragment_main, null);
         attributeParser.setViewAttribute(view);
