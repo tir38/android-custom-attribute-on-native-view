@@ -5,7 +5,7 @@ We can apply a custom attribute to a custom view pretty easily:
 
 ```
  <com.tir38.android.customattrib.MyCustomView
-        android:id="@+id/custom_text_view2"
+        android:id="@+id/custom_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         custom:myCustomAttrib="true"/>
@@ -14,7 +14,7 @@ We can apply a custom attribute to a custom view pretty easily:
 But can we apply that same attribute to a built-in native view?
 ```
     <TextView
-        android:id="@+id/basic_text_view_with_custom_attribute_true"
+        android:id="@+id/basic_text_view_with_custom_attribute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         custom:myCustomAttrib="true"/>
