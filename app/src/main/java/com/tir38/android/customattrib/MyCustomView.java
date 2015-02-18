@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 public class MyCustomView extends TextView {
 
-    private boolean mCustomAttrib;
+    private boolean mCustomBooleanAttrib;
 
     public MyCustomView(Context context) {
         super(context);
@@ -18,20 +18,20 @@ public class MyCustomView extends TextView {
         super(context, attrs);
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.MyCustomView, 0, 0);
-        mCustomAttrib = typedArray.getBoolean(R.styleable.MyCustomView_myCustomAttrib, false);
+        mCustomBooleanAttrib = typedArray.getBoolean(R.styleable.MyCustomView_myCustomAttrib, false);
         typedArray.recycle();
         init();
     }
 
     private void init() {
 
-        int white = getResources().getColor(android.R.color.white);
-        int darkgrey = getResources().getColor(android.R.color.darker_gray);
+        int red = getResources().getColor(R.color.red);
+        int blue = getResources().getColor(R.color.blue);
 
-        if (mCustomAttrib) {
-            setTextColor(white);
+        if (mCustomBooleanAttrib) {
+            setTextColor(red);
         } else {
-            setTextColor(darkgrey);
+            setTextColor(blue);
         }
     }
 }
