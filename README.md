@@ -20,3 +20,9 @@ But can we apply that same attribute to a built-in native view?
         custom:myCustomAttrib="true"/>
 ```
 YES WE CAN!
+
+Thanks to this SO question: https://stackoverflow.com/questions/14800642/custom-xml-attributes-without-custom-view-in-fragment
+
+
+TODO:
+- can we apply same principals to layouts inflated in Activity?
