@@ -10,6 +10,7 @@ import android.view.View;
 public class AttributeParser {
 
     private AttributeParserFactory mFactory;
+    private MagicMan mMagicMan;
 
     /**
      * mAllAttributesForAllViews is a map of each view's id (Integer) to its attribute set,
@@ -17,7 +18,6 @@ public class AttributeParser {
      * *
      */
     private SparseArray<SparseArray<String>> mAllAttributesForAllViews;
-    private MagicMan mMagicMan;
 
     public AttributeParser(Context context) {
         mAllAttributesForAllViews = new SparseArray<>();
@@ -25,12 +25,8 @@ public class AttributeParser {
         mMagicMan = new MagicMan(context);
     }
 
-    public void clear() {
-        mAllAttributesForAllViews.clear();
-    }
-
     /**
-     * Adds our own custom Factory to our existing LayoutInflater
+     * Adds our own custom Factory to an existing LayoutInflater
      *
      * @param inflater existing LayoutInflater
      * @return LayoutInflater with custom Factory
@@ -52,13 +48,6 @@ public class AttributeParser {
     public void setFactory(LayoutInflater inflater) {
         inflater.cloneInContext(inflater.getContext()).setFactory(mFactory);
     }
-
-//    public void setViewAttribute(Activity activity) {
-//        for (Map.Entry<Integer, HashMap<Integer, String>> attribute : mAllAttributesForAllViews.entrySet())
-//            if (activity.findViewById((Integer) attribute.getKey()) != null)
-//                activity.findViewById((Integer) attribute.getKey()).setTag(attribute.getValue());
-//
-//    }
 
     /**
      * sets all attributes for all views inside parentView
@@ -86,10 +75,12 @@ public class AttributeParser {
 
                         if (attributeId != 0) { // valid attribute id
                             String attributeValue = attributes.valueAt(j);
+
+                            // TODO how can we check the type of the attribute value so we don't have to cast?
                             Boolean shouldDoMagic = Boolean.valueOf(attributeValue);
                             mMagicMan.doTheMagic(view, shouldDoMagic);
 
-                            view.setTag(attributeValue); // even though we just applied the magic, set the tag so we can check state of the magic later
+                            view.setTag(attributeValue); // even though we just did the magic, set the tag so we can check state of the magic later
                         }
                     }
                 }
@@ -98,10 +89,14 @@ public class AttributeParser {
         }
     }
 
+    private void clear() {
+        mAllAttributesForAllViews.clear();
+    }
+
     private class AttributeParserFactory implements LayoutInflater.Factory {
 
         /**
-         * called once for each View to parse xml attributes
+         * called once for each View to store xml attributes for re-access later
          *
          * @param name
          * @param context
@@ -140,8 +135,5 @@ public class AttributeParser {
 
             return null;
         }
-
     }
-
-
 }

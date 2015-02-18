@@ -18,28 +18,28 @@
         android:id="@+id/custom_text_view1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        custom:myCustomAttrib="true"
-        android:text="custom text view: true"/>
+        android:text="custom text view: true"
+        custom:myCustomAttrib="true"/>
 
     <com.tir38.android.customattrib.MyCustomView
         android:id="@+id/custom_text_view2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        custom:myCustomAttrib="false"
-        android:text="custom text view: false"/>
+        android:text="custom text view: false"
+        custom:myCustomAttrib="false"/>
 
     <TextView
         android:id="@+id/basic_text_view_with_custom_attribute_true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        custom:myCustomAttrib="true"
-        android:text="basic text view with custom attrib: true"/>
+        android:text="basic text view with custom attrib: true"
+        custom:myCustomAttrib="true"/>
 
     <TextView
         android:id="@+id/basic_text_view_with_custom_attribute_false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        custom:myCustomAttrib="false"
-        android:text="basic text view with custom attrib: false"/>
+        android:text="basic text view with custom attrib: false"
+        custom:myCustomAttrib="false"/>
 
 </LinearLayout>

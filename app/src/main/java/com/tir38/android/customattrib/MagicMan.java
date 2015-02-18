@@ -20,6 +20,8 @@ public class MagicMan {
     }
 
     public void doTheMagic(View view, Boolean doIt) {
+
+        // little test of magic, can we set color of ANY TextView that has our custom attribute?
         if (view instanceof TextView) {
 
             TextView textView = (TextView) view;
@@ -34,6 +36,7 @@ public class MagicMan {
             }
         }
 
+        // the real application: can I hold only all views that have been "tagged" with custom attribute?
         theViews.add(view);
         Log.d(TAG, "increased views to: " + theViews.size());
     }
